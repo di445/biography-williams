@@ -1,0 +1,448 @@
+/*  AETN Video Player Styles */
+
+/* Common 
+************/
+.pdk_hidden { display: none; }
+
+
+/* Player
+**********/
+.tpPlayer,
+.player {
+	overflow: hidden;
+}
+.tpPlayer .player {
+	margin: 0px; /* default.css override */
+}
+#player {
+	width: 644px;
+	height: 363px;
+}
+.tpPlayer,
+video {
+	position: relative;
+	z-index: 0;
+}
+
+/* Control Rack Plugin 
+***********************/
+.pdk_aetnControlsPlugin {
+	background: #505253;
+	color: #8F8F8F;
+	font: normal 13px Arial;
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	z-index: 1;
+}
+/* Cannot dynamically change position to fixed and back due to Android 4.0 bug 
+#player.fullscreen #pdk_aetnControlsPlugin {
+	position: fixed;
+}
+*/
+.pdk_rack {
+	display: none;
+	background: url(../../pdk/images/bg-controlButton.jpg) repeat-x; /* Fallback for Android version <= 3 */
+	background-image: linear-gradient(top, #404040 0%, #121212 100%);
+	background-image: -o-linear-gradient(top, #404040 0%, #121212 100%);
+	background-image: -moz-linear-gradient(top, #404040 0%, #121212 100%);
+	background-image: -webkit-linear-gradient(top, #404040 0%, #121212 100%);
+	background-image: -ms-linear-gradient(top, #404040 0%, #121212 100%);
+	height: 33px;
+}
+.pdk_rackBtn {
+	float: left;
+	border-top: 1px solid #434546;
+	border-bottom: 1px solid #434546;
+	border-right: 1px solid #434546;
+	cursor: pointer;
+	width: 42px;
+	height: 31px;
+	text-align: center;
+}
+.pdk_rackBtn:last-child {
+	border-right: 0;
+	width: 41px;
+}
+.pdk_btnPlay.pdk_playActive {
+	background: url(../../pdk/images/rack/icon-pause-off.png) no-repeat transparent;
+	opacity: 0.5;
+}
+.pdk_btnPlay.pdk_playActive:hover {
+	background: url(../../pdk/images/rack/icon-pause-on.png) no-repeat transparent;
+	opacity: 1;
+}
+.pdk_btnPlay.pdk_pauseActive {
+	background: url(../../pdk/images/rack/icon-play-off.png) no-repeat transparent;
+	opacity: 0.5;
+}
+.pdk_btnPlay.pdk_pauseActive:hover {
+	background: url(../../pdk/images/rack/icon-play-on.png) no-repeat transparent;
+	opacity: 1;
+}
+.pdk_playerTime {
+	width: 93px;
+	cursor: default;
+}
+.pdk_playerTime span {
+	padding: 8px 0 0 0;
+	display: inline-block;
+}
+.pdk_fullscreenLandscape {
+	position: fixed; /*position: fixed;*/ /* Cannot dynamically change position to fixed and back due to Android 4.0 bug */
+	width: 100% !important;
+	height: 100% !important;
+	top: 0px;
+	right: 0px;
+	bottom: 0px;
+	left: 0px;
+	z-index: 10001;
+}
+.pdk_fullscreenPortrait {
+	position: fixed; /*position: fixed;*/ /* Cannot dynamically change position to fixed and back due to Android 4.0 bug */
+	width: 100% !important;
+	top: 50%;
+	right: 0px;
+	left: 0px;
+	z-index: 10001;
+}
+#pdk_fullScreenOverlay {
+    display: none;
+    background:  #000;
+    height: 5024px;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10000;
+}
+.pdk_controlTooltip {
+	font-size: 12px;
+	display: none;
+	background: #383838;
+	border: 1px solid #545759;
+	padding: 2px 4px;
+	color: #B4B4B4;
+	position: relative;
+	top: -37px;
+	left: 0;
+	z-index: 1;
+}
+.pdk_btnFullScreen.pdk_fullscreenActive {
+	background: url(../../pdk/images/rack/icon-fullscreenAlt_off.png) no-repeat transparent;
+	opacity: 0.5;
+}
+.pdk_btnFullScreen.pdk_fullscreenActive:hover {
+	background: url(../../pdk/images/rack/icon-fullscreenAlt_on.png) no-repeat transparent;
+	opacity: 1;
+}
+.pdk_btnFullScreen.pdk_nonFullscreenActive {
+	background: url(../../pdk/images/rack/icon-fullscreen-off.png) no-repeat transparent;
+	opacity: 0.5;
+}
+.pdk_btnFullScreen.pdk_nonFullscreenActive:hover {
+	background: url(../../pdk/images/rack/icon-fullscreen-on.png) no-repeat transparent;
+	opacity: 1;
+}
+.pdk_btnFullScreen .pdk_controlTooltip {
+	width: 97px;
+	left: -34px;
+}
+.pdk_btnCC {
+	background: url(../../pdk/images/rack/icon-CC-off.png) no-repeat transparent;
+	opacity: 0.5;
+}
+.pdk_btnCC:hover {
+	background: url(../../pdk/images/rack/icon-CC-on.png) no-repeat transparent;
+	opacity: 1;
+}
+.pdk_btnShare {
+	background: url(../../pdk/images/rack/icon-share-off.png) no-repeat transparent;
+	opacity: 0.5;
+}
+.pdk_btnShare:hover {
+	background: url(../../pdk/images/rack/icon-share-on.png) no-repeat transparent;
+	opacity: 1;
+}
+.pdk_chapterPoint {
+	background: url(../../pdk/images/icon-bullet-gray.png) no-repeat;
+	height: 4px;
+	width: 4px;
+	position: absolute;
+	top: 14px;
+}
+
+/* Closed Captions
+********************/
+.tpSubtitlesContent {
+	/*background: green;
+	height: 50px;
+	color: black;*/
+}
+
+/* Watermark Image
+*********************/
+.pdk_watermarkImage {
+	position: absolute;
+	bottom: 39px;
+	right: 7px;
+}
+
+/* Scrubber - jQuery UI slider 
+******************************/
+.pdk_scrubber {
+	position: relative;
+}
+.pdk_scrubberBar {
+	background: #CCC;
+}
+.pdk_scrubberBar {
+	background: url(../../pdk/images/bg-scrubBar.jpg) repeat-x; /* Fallback for Android version <= 3 */
+	background-image: linear-gradient(top, #55685C 0%, #3D5044 100%);
+	background-image: -o-linear-gradient(top, #55685C 0%, #3D5044 100%);
+	background-image: -moz-linear-gradient(top, #55685C 0%, #3D5044 100%);
+	background-image: -webkit-linear-gradient(top, #55685C 0%, #3D5044 100%);
+	background-image: -ms-linear-gradient(top, #55685C 0%, #3D5044 100%);
+	position: relative;
+    height: 100%;
+}
+.pdk_scrubber .ui-slider-range {
+	background: url(../../pdk/images/scrubBar-red.jpg) repeat-x; /* Fallback for Android version <= 3 */
+    background-image: linear-gradient(top, #A92A2A 0%, #9C1D1D 100%);
+	background-image: -o-linear-gradient(top, #A92A2A 0%, #9C1D1D 100%);
+	background-image: -moz-linear-gradient(top, #A92A2A 0%, #9C1D1D 100%);
+	background-image: -webkit-linear-gradient(top, #A92A2A 0%, #9C1D1D 100%);
+	background-image: -ms-linear-gradient(top, #A92A2A 0%, #9C1D1D 100%);
+	height: 100%;
+}
+.pdk_scrubber .ui-slider-handle {
+    background: #FFF;
+    width: 0px;
+    height: 100%;
+    position: absolute;
+	top: 0px;
+}
+.pdk_scrubberBarTooltip {
+	display: none;
+	font-size: 12px;
+	padding: 2px 4px;
+	color: #B4B4B4;
+	position: absolute;
+	top: -29px;
+	left: 0;
+	z-index: 1;
+	width: 40px;
+	height: 15px;
+	margin-left: -21px;
+}
+.pdk_scrubberBarTooltipTime {
+	background: #383838;
+	border: 1px solid #545759;
+	padding: 1px 0;
+}
+.pdk_scrubberBarTooltipArrow {
+	background: url(../../pdk/images/icon-tt_arrow.png) no-repeat;
+	width: 12px;
+	height: 9px;
+	margin: 0 auto;
+	position: relative;
+	top: -1px;
+}
+
+/* Share Card 
+****************************/
+.pdk_aetnShareCardPlugin {
+	background: url(../../pdk/images/bg-overlay-80.png) repeat; /* Fallback for Android version 2.3.3 */
+	background: rgba(0, 0, 0, 0.8);
+	font: normal 12px Arial;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	overflow: hidden;
+	z-index: 1;
+	/*-webkit-tap-highlight-color: rgba(0, 0, 0, 0);	*/
+}
+.pdk_shareNav,
+.pdk_shareContentMiddle,
+.pdk_shareContentBottom {
+	background: transparent;
+	color: #B5B5B5;
+}
+.pdk_shareNav {
+	height: 30px;
+}
+.pdk_shareNavLinkPost,
+.pdk_shareNavLinkLink,
+.pdk_shareNavCloseBtn,
+.pdk_shareSocialContainer ul li  {
+	cursor: pointer;	
+}
+/* Text hover color */
+.pdk_shareNavIcon:hover,
+.pdk_shareNavCloseBtn:hover,
+.pdk_shareSocialContainer ul li:hover {
+	color: #F30202;
+}
+.pdk_shareNavIcon {
+	text-indent: -9999px;
+}
+.pdk_shareNavIcon {
+	background: url(../../pdk/images/share_off.png) no-repeat 0 0;
+	position: absolute;
+	left: 3px;
+	top: 2px;
+	width: 60px;
+	height: 21px;
+}
+.pdk_shareNavMiddle {
+	margin: 0 auto;
+	width: 60px;
+	height: 25px;
+}
+.pdk_shareNavLinkPost,
+.pdk_shareNavLinkLink {
+	display: inline-block;
+}
+.pdk_shareNavLinkPost,
+.pdk_shareNavLinkLink {
+	position: relative;
+	width: 25px;
+	height: 25px;
+}
+.pdk_shareNavLinkPost {
+	background: url(../../pdk/images/icon-post-off.png) no-repeat 0 0;
+	margin-right: 10px;
+}
+.pdk_shareNavLinkPost:hover {
+	background: url(../../pdk/images/icon-post-on.png) no-repeat 0 0;
+}
+.pdk_shareNavLinkLink {
+	background: url(../../pdk/images/icon-link-off.png) no-repeat 0 0;
+}
+.pdk_shareNavLinkLink:hover {
+	background: url(../../pdk/images/icon-link-on.png) no-repeat 0 0;
+}
+.pdk_shareNav .pdk_controlTooltip {
+	font-size: 12px;
+	display: none;
+	background: #383838;
+	border: 1px solid #545759;
+	padding: 2px 4px;
+	color: #B4B4B4;
+	position: absolute;
+	top: 25px;
+	left: -4px;
+	z-index: 1;
+}
+.pdk_shareNavCloseBtn {
+	background-image: linear-gradient(top, #4F4F4F 0%, #121212 100%);
+	background-image: -o-linear-gradient(top, #4F4F4F 0%, #121212 100%);
+	background-image: -moz-linear-gradient(top, #4F4F4F 0%, #121212 100%);
+	background-image: -webkit-linear-gradient(top, #4F4F4F 0%, #121212 100%);
+	background-image: -ms-linear-gradient(top, #4F4F4F 0%, #121212 100%);
+	border: 1px solid #545759;
+	position: absolute;
+	right: 2px;
+	top: 2px;
+	width: 43px;
+	text-align: center;
+	padding: 2px 0;
+	margin: 3px 3px 0 0;
+}
+.pdk_shareContentWrapper,
+.pdk_shareImageWrapper,
+.pdk_shareSocialColumn,
+.pdk_sharePosterImage {
+	height: 100%;
+}
+.pdk_shareContentBottom,
+.pdk_shareContentMiddle {
+	height: 50%;	
+}
+.pdk_shareImageWrapper,
+.pdk_shareSocialColumn {
+	width: 49%;
+}
+.pdk_shareImageWrapper {
+	background: #131313;
+	border: 1px solid #545759;
+	float: left;
+	margin: 0 0 0 3px;
+}
+.pdk_sharePosterImage {
+	width: 100%;
+}
+.pdk_shareSocialColumn {
+	float: right;
+	margin: 0 3px 0 0px;
+}
+.pdk_sharePostView,
+.pdk_shareLinkView {
+	height: 96%;
+}
+.pdk_shareSocialColumn p {
+	height: 11%;
+	margin: 0;
+}
+.pdk_shareSocialContainer,
+.pdk_shareLinkContainer {
+	background: rgb(47, 47, 47);
+	background: rgba(47, 47, 47, 0.9);
+	border: 1px solid #545759;
+	height: 82%;
+	padding: 6px;
+	position: relative;
+	z-index: 2000;
+}
+.pdk_copyPlayerLink {
+	word-wrap: break-word;
+	/*-webkit-tap-highlight-color: rgba(0, 0, 0, 0);*/
+	-webkit-user-select: text;
+	-khtml-user-select: text;
+	-moz-user-select: text;
+	-ms-user-select: text;
+	-o-user-select: text;
+	user-select: text;
+	position: relative;
+	z-index: 2001;
+}
+.pdk_copyPlayerLink a {
+ 	cursor: text;
+}
+.pdk_sharePosterImage {
+	border: none;
+}
+.pdk_shareSocialContainer ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+.pdk_shareSocialContainer ul li {
+	float: left;
+	width: 50%;
+	height: 24px;
+}
+.pdk_shareSocialContainer ul li img {
+	margin-right: 7px;
+}
+
+
+/* Error
+**************/
+.tpPlayer .error {
+	display: none;   /* This is for the built-in error display that currently isn't working for HTML5 player.  Just hide this for now. */
+}
+.pdk_aetnErrorsPlugin {
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	z-index: 1000;
+	color: #F30202;
+	font: bold 14px Arial;
+}
+.pdk_aetnErrorsPlugin a:hover {
+	text-decoration: underline;
+}

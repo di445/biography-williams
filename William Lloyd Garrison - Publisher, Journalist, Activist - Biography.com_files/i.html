@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<!-- saved from url=(0148)http://sync.graph.bluecava.com/i?p=fcd61682-83ca-4854-828b-a06c77825fb9&segment=beb690139e8ce511a7020050569b1b56&seg_apx=3949288&uid=&csid=undefined -->
+<html xmlns="http://www.w3.org/1999/xhtml"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title></title>
+    <link rel="icon" href="data:;base64,iVBORw0KGgo=">
+    <noscript>
+        &lt;meta http-equiv="Cache-control" content="no-cache" /&gt;
+        &lt;meta http-equiv="pragma" content="no-cache" /&gt;
+        &lt;meta http-equiv="EXPIRES" content="0" /&gt;
+		&lt;meta name="refresh" http-equiv="refresh" content="0; URL=r.png?amp;noscript=true&amp;amp;p=fcd61682-83ca-4854-828b-a06c77825fb9&amp;segment=beb690139e8ce511a7020050569b1b56&amp;seg_apx=3949288&amp;uid=&amp;csid=undefined"/&gt;
+    </noscript>
+</head>
+<body>    
+    <noscript>
+        &lt;img src="p.png?noscript=true&amp;p=fcd61682-83ca-4854-828b-a06c77825fb9&amp;segment=beb690139e8ce511a7020050569b1b56&amp;seg_apx=3949288&amp;uid=&amp;csid=undefined" width="1" height="1" /&gt;
+    </noscript>
+    <script src="bc.js"></script>
+    <script type="text/javascript">
+        (function () {
+            var urlParams = {};
+            var e,
+                d = function (s) { return decodeURIComponent(s).replace(/\+/g, " "); },
+                q = window.location.search.substring(1),
+                r = /([^&=]+)=?([^&]*)/g;
+
+            while (e = r.exec(q)) {
+                if (e[1].indexOf("[") == "-1")
+                    urlParams[d(e[1])] = d(e[2]);
+                else {
+                    var b1 = e[1].indexOf("["),
+                        aN = e[1].slice(b1+1, e[1].indexOf("]", b1)),
+                        pN = d(e[1].slice(0, b1));
+
+                    if (typeof urlParams[pN] != "object")
+                        urlParams[d(pN)] = {},
+                        urlParams[d(pN)].length = 0;
+
+                    if (aN)
+                        urlParams[d(pN)][d(aN)] = d(e[2]);
+                    else
+                        Array.prototype.push.call(urlParams[d(pN)], d(e[2]));
+                }
+            }
+            if (urlParams.p) {
+                var pid = urlParams.p;
+                delete urlParams.p;
+                b.edge(pid, urlParams,function (err, result) {});
+            }
+        })();
+    </script>
+
+
+<img src="getuid" width="1" height="1"><img src="seg" width="1" height="1"></body></html>
